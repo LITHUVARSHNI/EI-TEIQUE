@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Well-Being Prediction</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Well-Being Prediction</h1>
+
+        <!-- Section 1: Questions 1-20 -->
+        <div class="question-section">
+            <h2>Section 1</h2>
+            <form id="section1-form">
+                <div class="question">
+                    
+                    <label for="wb_q1">
+                        1. How well do you manage your energy levels throughout the day to maintain consistent productivity while working remotely? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="wb_q1" name="wb_q1" min="0" max="5">
+                    <label for="soc_q1">
+                        2.How effectively do you balance your communication frequency with colleagues to ensure collaboration while also maintaining your individual productivity? (0 = Not Balancing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q1" name="soc_q1" min="0" max="5">
+                    <label for="emo_q1">
+                        3. How effectively do you manage your emotional reactions when encountering unexpected work challenges while working remotely? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="emo_q1" name="emo_q1" min="0" max="5">
+                    <label for="sc_q1">
+                        4. How effectively do you manage your daily work tasks to ensure you're meeting your productivity goals while maintaining a healthy work-life balance? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="sc_q1" name="sc_q1" min="0" max="5">
+                    <label for="wb_q2">
+                        5.To what extent do you feel that your mental and emotional health is taken care of in your remote work environment? ( 0-5)
+                    </label>
+                    <input type="number" id="wb_q2" name="wb_q2" min="0" max="5">
+                    <label for="soc_q2">
+                        6.How well do you adapt your virtual communication style to reflect your commitment to work-life balance and personal well-being? (0 = Not Adapting Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q2" name="soc_q2" min="0" max="5">
+                    <label for="emo_q2">
+                        7. How skilled are you at recognizing signs of burnout or emotional fatigue in yourself and taking proactive measures to address them? (0 = Not Skilled, 1 = Very Little Skill, 2 = Little Skill, 3 = Moderate Skill, 4 = Skilled, 5 = Very Skilled)
+                    </label>
+                    <input type="number" id="emo_q2" name="emo_q2" min="0" max="5">
+                    <label for="sc_q2">
+                        8.How often do you assess your work priorities and make adjustments to your schedule to ensure you're focusing on tasks that align with your goals? (0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+                    </label>
+                    <input type="number" id="sc_q2" name="sc_q2" min="0" max="5">
+                    <label for="wb_q3">
+                        9.How consistently do you engage in self-care activities like exercise, taking breaks, or pursuing hobbies to support your well-being while working remotely? (0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+
+                    </label>
+                    <input type="number" id="wb_q3" name="wb_q3" min="0" max="5">
+                    <label for="soc_q3">
+                        10. How confident are you in your ability to foster a sense of camaraderie and connection with your remote colleagues through virtual communication? (0 = Not Confident, 1 = Very Little Confidence, 2 = Little Confidence, 3 = Moderate Confidence, 4 = Confident, 5 = Very Confident)
+
+                    </label>
+                    <input type="number" id="soc_q3" name="soc_q3" min="0" max="5">
+                    <label for="sc_q3">
+                        11. How consistently do you adhere to your work schedule and commitments as a remote worker? ( 0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+                    </label>
+                    <input type="number" id="sc_q3" name="sc_q3" min="0" max="5">
+                    <label for="wb_q4">
+                        12.How well do you manage to disconnect from work and relax during your non-working hours? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="wb_q4" name="wb_q4" min="0" max="5">
+                    <label for="soc_q4">
+                        13. How well do you manage your virtual interactions with colleagues to maintain productive conversations and avoid overextending your work hours? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q4" name="soc_q4" min="0" max="5">
+                    <label for="emo_q3">
+                        14.  Scenario: A colleague expresses dissatisfaction with your work through a virtual message. How well do you manage your emotional reaction and engage in a constructive dialogue? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="emo_q3" name="emo_q3" min="0" max="5">
+                    <label for="soc_q5">
+                        15.How often do you make an effort to engage in non-work related conversations with your remote colleagues? ( 0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+
+                    </label>
+                    <input type="number" id="soc_q5" name="soc_q5" min="0" max="5">
+                    <label for="wb_q5">
+                        16.How much does your emotional state influence your overall productivity while working from home? (0 = Not Influential, 1 = Very Little Influence, 2 = Little Influence, 3 = Moderate Influence, 4 = Influential, 5 = Very Influential)
+                    </label>
+                    <input type="number" id="wb_q5" name="wb_q5" min="0" max="5">
+                    <label for="wb_q6">
+                        17. How frequently do you experience feelings of loneliness or isolation due to remote work? (0 = Very Frequently, 1 = Frequently, 2 = Occasionally, 3 = Rarely, 4 = Very Rarely, 5 = Almost Never)
+                    </label>
+                    <input type="number" id="wb_q6" name="wb_q6" min="0" max="5">
+                    <label for="emo_q5">
+                        18.Scenario: You're given a last-minute change in a project's scope. How well do you manage your initial emotional response and adapt to the change? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="emo_q5" name="emo_q5" min="0" max="5">
+                    <label for="emo_q6">
+                        19.How well do you adapt your emotional responses to different virtual communication scenarios, such as receiving positive feedback or managing misunderstandings? (0 = Not Adapting Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+
+                    </label>
+                    <input type="number" id="emo_q6" name="emo_q6" min="0" max="5">
+                    <label for="soc_q6">
+                        20. How well are you able to collaborate seamlessly with your team despite not being physically present? ( 0 = Not Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q6" name="soc_q6" min="0" max="5">
+                </div>
+
+                <!-- Include questions Q2 to Q20 here -->
+                <!-- Adjust the 'name' attribute accordingly -->
+            </form>
+        </div>
+
+        <div class="question-section">
+            <h2>Section 2</h2>
+            <form id="section2-form">
+                <div class="question">
+                    <label for="emo_q7">
+                        21. How skilled are you at recognizing signs of burnout or emotional fatigue in yourself and taking proactive measures to address them? ( 0 = Not Skilled, 1 = Very Little Skill, 2 = Little Skill, 3 = Moderate Skill, 4 = Skilled, 5 = Very Skilled)
+                    </label>
+                    <input type="number" id="emo_q7" name="emo_q7" min="0" max="5">
+                    <label for="sc_q4">
+                        22. Scenario: You're assigned a complex project that requires focused effort. How well do you manage your work hours to ensure optimal productivity and work-life balance? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="sc_q4" name="sc_q4" min="0" max="5">
+                    <label for="soc_q7">
+                        23. How effectively do you balance your communication frequency with colleagues to ensure collaboration while also maintaining your individual productivity? ( 0 = Not Balancing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q7" name="soc_q7" min="0" max="5">
+                    <label for="soc_q8">
+                        24. How confident are you in your ability to foster a sense of camaraderie and connection with your remote colleagues through virtual communication? (0 = Not Confident, 1 = Very Little Confidence, 2 = Little Confidence, 3 = Moderate Confidence, 4 = Confident, 5 = Very Confident)
+                    </label>
+                    <input type="number" id="soc_q8" name="soc_q8" min="0" max="5">
+                    <label for="sc_q5">
+                        25.How effectively do you handle feelings of frustration or impatience when facing unexpected work disruptions or technical issues? ( 0 = Not Handling Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="sc_q5" name="sc_q5" min="0" max="5">
+                    <label for="emo_q8">
+                        26.How much does your emotional state influence your overall productivity while working from home? ( 0 = Not Influential, 1 = Very Little Influence, 2 = Little Influence, 3 = Moderate Influence, 4 = Influential, 5 = Very Influential)
+                    </label>
+                    <input type="number" id="emo_q8" name="emo_q8" min="0" max="5">
+                    <label for="wb_q6">
+                        27. How consistently do you engage in self-care activities like exercise, taking breaks, or pursuing hobbies to support your well-being while working remotely? ( 0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+                    </label>
+                    <input type="number" id="wb_q6" name="wb_q6" min="0" max="5">
+                    <label for="sc_q6">
+                        28.How effectively do you manage your daily work tasks to ensure you're meeting your productivity goals while maintaining a healthy work-life balance? (0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="sc_q6" name="sc_q6" min="0" max="5">
+                    <label for="soc_q9">
+                        29.scenario:You're collaborating with colleagues from different time zones, making it challenging to find suitable meeting times. How well can you negotiate and find compromises that accommodate everyone? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+
+                    </label>
+                    <input type="number" id="soc_q9" name="soc_q9" min="0" max="5">
+                    <label for="emo_q9">
+                        30. scenario:You notice that a team member seems emotionally distressed during a video conference. How likely are you to express concern and offer support? ( 0 = Very Unlikely, 1 = Unlikely, 2 = Neutral, 3 = Likely, 4 = Very Likely, 5 = Extremely Likely)
+                    </label>
+                    <input type="number" id="emo_q9" name="emo_q9" min="0" max="5">
+                    <label for="wb_q7">
+                        31. Scenario: You receive constructive feedback on your work. How well can you manage your emotional response, remain open to feedback, and look for opportunities to improve? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="wb_q7" name="wb_q7" min="0" max="5">
+                    <label for="wb_q8">
+                        32.How well do you manage to disconnect from work and relax during your non-working hours? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="wb_q8" name="wb_q8" min="0" max="5">
+                    <label for="sc_q7">
+                        33. How often do you find yourself succumbing to procrastination when it comes to remote work-related activities? ( 0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+                    </label>
+                    <input type="number" id="sc_q7" name="sc_q7" min="0" max="5">
+                    <label for="sc_q8">
+                        34. Scenario: You're assigned a complex project that requires focused effort. How well do you manage your work hours to ensure optimal productivity and work-life balance? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+
+                    </label>
+                    <input type="number" id="sc_q8" name="sc_q8" min="0" max="5">
+                    <label for="wb_q9">
+                        35.How frequently do you experience feelings of loneliness or isolation due to remote work? (0 = Very Frequently, 1 = Frequently, 2 = Occasionally, 3 = Rarely, 4 = Very Rarely, 5 = Almost Never)
+
+                    </label>
+                    <input type="number" id="wb_q9" name="wb_q9" min="0" max="5">
+                    <label for="sc_q9">
+                        36.How well do you resist the urge to let non-essential tasks interfere with your work responsibilities? (0 = Not Resisting Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="sc_q9" name="sc_q9" min="0" max="5">
+                    <label for="soc_q10">
+                        37. How effectively do you balance your communication frequency with colleagues to ensure collaboration while also maintaining your individual productivity? ( 0 = Not Balancing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+                    </label>
+                    <input type="number" id="soc_q10" name="soc_q10" min="0" max="5">
+                    <label for="sc_q10">
+                        38.How consistently do you adhere to your work schedule and commitments as a remote worker? ( 0 = Rarely or Never, 1 = Very Rarely, 2 = Rarely, 3 = Sometimes, 4 = Often, 5 = Very Often)
+                    </label>
+                    <input type="number" id="sc_q10" name="sc_q10" min="0" max="5">
+                    <label for="emo_q10">
+                        39.scenario:Your team celebrates a project milestone. How well can you express genuine excitement and congratulate team members, even in a virtual setting? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)
+
+                    </label>
+                    <input type="number" id="emo_q10" name="emo_q10" min="0" max="5">
+                    <label for="wb_q10">
+                        40. scenario:You encounter a work task that you find tedious and uninteresting. How well can you maintain focus and complete the task efficiently? ( 0 = Not Managing Well, 1 = Poorly, 2 = Fairly, 3 = Well, 4 = Very Well, 5 = Excellently)  
+                    </label>
+                    <input type="number" id="wb_q10" name="wb_q10" min="0" max="5">
+                </div>
+
+                
+            </form>
+        </div>
+
+        <button type="button" id="predict-button">Predict</button>
+    </div>
+    <div id="error-message" style="display: none;">Error goes here</div>
+  <div id="predictions" style="display: none;">
+    <h2>Predictions:</h2>
+    <p>Well-Being: <span id="well-being-prediction"></span></p>
+    <p>Sociality: <span id="sociality-prediction"></span></p>
+    <p>Emotionality: <span id="emotionality-prediction"></span></p>
+    <p>Self-Control: <span id="self-control-prediction"></span></p>
+  </div>
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
